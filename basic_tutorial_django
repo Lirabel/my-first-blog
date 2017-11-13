@@ -1,0 +1,46 @@
+$ mkdir djangogirls											// папка проекта
+$ cd djangogirls											// переход в папку проекта
+$ python -m venv myvenv										//создание виртуального окружения под именем myvenv
+myvenv\Scripts\activate										// запуск виртуального окружения
+(myvenv) ...> django-admin.exe startproject mysite . 		//создание нового проекта
+
+djangogirls
+├───manage.py 					//С помощью него мы, помимо прочего, сможем запустить веб-сервер на твоем компьютере без установки дополнительных программ.
+└───mysite
+        settings.py 			//содержит настройки для веб-сайта.
+        urls.py 				//одержит список шаблонов, по которым ориентируется urlresolver
+        wsgi.py
+        __init__.py
+
+$ python manage.py migrate 		//создать базу данных для сайта (мы должны быть в директории djangogirls, где расположен файл manage.py). 
+$ python manage.py runserver 	//Запуск веб-сервера (http://127.0.0.1:8000/)
+$ python manage.py startapp blog 	//Создание приложения с именем blog
+
+djangogirls
+├── blog
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+├── db.sqlite3
+├── manage.py
+└── mysite
+    ├── __init__.py
+    ├── settings.py
+    ├── urls.py
+    └── wsgi.py
+В файле blog/models.py - код модели (классы, переменные, методы)
+$ python manage.py makemigrations blog 		//добавление нашей модели в базу данных
+$ python manage.py migrate blog				//cоздание таблицы моделей в базе данных
+
+$ python manage.py runserver				//запуск сервера
+
+//Создаём Git-репозиторий
+$ git init
+Initialized empty Git repository in ~/djangogirls/.git/
+$ git config --global user.name "Your Name"
+$ git config --global user.email you@example.com
