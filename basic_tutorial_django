@@ -71,6 +71,11 @@ $ source myvenv/bin/activate
 (mvenv) $ python manage.py migrate
 (mvenv) $ python manage.py createsuperuser
 
+//заходим на PythonAnywhere, открываем Bash console и набираем команду:
+$ cd my-first-blog
+$ git pull
+
+*********************
 // проверка, какие файлы изменены в Git
 $ git status
 //замена... 
@@ -78,5 +83,5 @@ $ git add --all .
 $ git commit -m "Changed the HTML for the site."
 
 $ git push
-
+*********************
 $ python manage.py shell // интерактивная консоль Django
