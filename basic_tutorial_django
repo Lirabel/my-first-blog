@@ -80,6 +80,7 @@ $ git pull
 $ git status
 //замена... 
 $ git add --all .
+$ git status
 $ git commit -m "Changed the HTML for the site."
 
 $ git push
