@@ -75,3 +75,8 @@ $ source myvenv/bin/activate
 $ git status
 //замена... 
 $ git add --all .
+$ git commit -m "Changed the HTML for the site."
+
+$ git push
+
+$ python manage.py shell // интерактивная консоль Django
