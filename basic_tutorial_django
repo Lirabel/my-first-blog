@@ -39,8 +39,39 @@ $ python manage.py migrate blog				//cоздание таблицы моделе
 
 $ python manage.py runserver				//запуск сервера
 
+
+*******************************************************************************************
+
 //Создаём Git-репозиторий
 $ git init
 Initialized empty Git repository in ~/djangogirls/.git/
 $ git config --global user.name "Your Name"
 $ git config --global user.email you@example.com
+
+$ git status 		// возвращает информацию обо всех ранее неотслеживаемых/изменённых/добавленных в git файлах, а также статус ветки и многое другое. 
+$ git add --all 	//
+$ git remote add origin https://github.com/Lirabel/my-first-blog.git
+$ git push -u origin master
+
+********************************************************************************************
+
+//pythonanywhere
+
+$ git clone https://github.com/<your-github-username>/my-first-blog.git 	//загрузим наш код из GitHub на PythonAnywhere, создав «клон» репозитория
+tree my-first-blog //дерево, для проверки
+
+//Создаём виртуальное окружение на PythonAnywhere
+$ cd my-first-blog
+$ virtualenv --python=python3.6 myvenv
+$ source myvenv/bin/activate
+(myvenv) $  pip install django~=1.11.0
+
+//Создаём базу данных на PythonAnywhere
+
+(mvenv) $ python manage.py migrate
+(mvenv) $ python manage.py createsuperuser
+
+// проверка, какие файлы изменены в Git
+$ git status
+//замена... 
+$ git add --all .
